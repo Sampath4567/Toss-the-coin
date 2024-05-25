@@ -1,0 +1,108 @@
+div.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(235, 229, 229);
+    border-radius: 20px;
+    border-color: brown;
+}
+
+h1 {
+    color: brown;
+    background-color:floralwhite;
+    
+}
+
+p {
+    color: brown;
+    font-size: large;
+    font-weight:bold;
+}
+
+button {
+    padding: 1rem;
+    background-color: ivory;
+    border: 2rem;
+    border-radius: 10px;
+    color: ivory;
+    font-weight: bold;
+}
+
+.pushable {
+    background: rgb(108, 105, 105);
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: silver;
+    color: white;
+    transform: translateY(-6px);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
+
+#coin {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem 1rem;
+    transform-style: preserve-3d;
+}
+
+#coin div {
+    width: 100%;
+    height: 100%;
+    border: 5px solid silver;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    background-size: contain;
+    position: absolute;
+}
+
+#heads {
+    background-image: url("heads.png");
+}
+
+.animate-heads {
+    animation: flipHeads 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipHeads {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1800deg);
+    }
+}
+
+#tails {
+    background-image: url("tails.png");
+    transform: rotateY(-180deg);
+}
+
+.animate-tails {
+    animation: flipTails 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipTails {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1620deg);
+    }
+}
